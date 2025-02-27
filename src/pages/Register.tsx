@@ -328,7 +328,7 @@ function Register() {
 
               <button
                 type="submit"
-                disabled={isLoading || !values.image} // Disable if image is not uploaded
+                disabled={isLoading || !values.image}
                 className={`mt-4 px-4 py-2 rounded w-3/4 lg:w-1/4 ${
                   isLoading || !values.image
                     ? "bg-gray-400 cursor-not-allowed"

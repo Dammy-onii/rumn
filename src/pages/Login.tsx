@@ -39,7 +39,7 @@ function Login() {
       toast("Login Successful");
       setTimeout(() => {
         navigate("/dashboard");
-      }, 4000);
+      }, 2000);
     } catch (error) {
       if (error instanceof AxiosError) {
         console.log(error);

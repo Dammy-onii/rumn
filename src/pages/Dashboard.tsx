@@ -28,13 +28,14 @@ const Dashboard = () => {
         }
       }
       setError("An error occurred while fetching data.");
-      console.log(error)
+      console.log(error);
     } finally {
       setLoading(false);
     }
   };
 
   const proceed = async () => {
+    setLoading(false);
     try {
       const response = userID && (await userPayment(userID));
       console.log(response);
@@ -56,13 +57,15 @@ const Dashboard = () => {
   }, []);
 
   if (loading) {
-    return <div className=" w-full h-[80vh] flex items-center justify-center ">
-    <div className="loader"></div>
-  </div>;
+    return (
+      <div className=" w-full h-[80vh] flex items-center justify-center ">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   if (error) {
-    navigate("/")
+    navigate("/");
   }
 
   return (
@@ -84,12 +87,7 @@ const Dashboard = () => {
         </div>
 
         <div className=" w-full md:w-3/5 ">
-          <p className="text-gray-800">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum a
-            voluptas beatae doloremque dolor, libero omnis ratione ea tenetur
-            sed. Quis et numquam deserunt natus pariatur aut vel quisquam
-            labore.
-          </p>
+          <p className="text-gray-800">{user.additionalInfo}</p>
 
           <div className="  flex flex-col ">
             <div className=" border-b-2 pb-4 my-2 ">
@@ -208,7 +206,9 @@ const Dashboard = () => {
             ⚠ Warning: Your payment is pending. To view the complete dashboard,
             please make payment.{" "}
             <span onClick={proceed} className="font-bold cursor-pointer">
-              PROCEED TO PAYMENT
+              <button disabled={loading} onClick={proceed}>
+                PROCEED TO PAYMENT
+              </button>
             </span>
           </div>
         )}
