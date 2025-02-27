@@ -103,8 +103,8 @@ function Login() {
               onSubmit={handleSubmit}
               className=" w-[90%] md:w-3/4 m-auto h-3/4 flex flex-col items-center justify-center px-10 py-2 rounded-xl gradientBackground "
             >
-              <h2 className=" text-4xl font-medium my-2 ">Login</h2>
-              <h2 className=" text-xl font-semibold ">
+              <h2 className=" text-xl lg:text-4xl font-medium my-2 ">Login</h2>
+              <h2 className=" text-lg lg:text-xl font-semibold ">
                 Model National Assembly (MNA)
               </h2>
               <h2 className=" text-sm font-light tracking-wide flex flex-row items-center gap-2 ">

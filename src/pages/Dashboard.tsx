@@ -68,7 +68,7 @@ const Dashboard = () => {
   return (
     <div className=" dashboardBack px-20 pb-5 py-5 min-h-screen h-full  ">
       <div className=" glassmorph flex flex-col md:flex-row items-center justify-center p-4 gap-20 mb-5 bg-white rounded-lg shadow-md">
-        <div className=" w-full md:w-2/5 flex flex-col gap-4 items-center justify-center border-r-2 ">
+        <div className=" w-full lg:w-2/5 flex flex-col gap-4 items-center justify-center border-r-2 ">
           <img
             src={user.image}
             alt="User Profile"
@@ -96,7 +96,7 @@ const Dashboard = () => {
               <h2 className=" font-semibold text-black tracking-wider my-2 ">
                 User Details
               </h2>
-              <div className=" grid grid-cols-2 md:grid-cols-3 ">
+              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                 <p className="text-gray-900">{user.email}</p>
                 <p className="text-gray-700 font-semibold">
                   <span className=" font-semibold text-gray-900 ">Gender:</span>{" "}
@@ -115,7 +115,7 @@ const Dashboard = () => {
               <h2 className=" font-semibold text-black tracking-wider my-2 ">
                 Institution
               </h2>
-              <div className=" grid grid-cols-2 md:grid-cols-3 ">
+              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                 <p className="text-gray-900">{user.affiliatedInstitution}</p>
                 <p className="text-gray-700 font-semibold">
                   <span className=" font-semibold text-gray-900 ">
@@ -131,7 +131,7 @@ const Dashboard = () => {
               <h2 className=" font-semibold text-black tracking-wider my-2 ">
                 Others
               </h2>
-              <div className=" grid grid-cols-2 md:grid-cols-3 ">
+              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                 <p className="text-gray-700 font-semibold">
                   <span className=" font-semibold text-gray-900 ">
                     Shirt Size:
@@ -165,7 +165,7 @@ const Dashboard = () => {
                 <h2 className=" font-semibold text-black tracking-wider my-4 ">
                   Committee: {user.committee.name}
                 </h2>
-                <div className=" grid grid-cols-2 md:grid-cols-3 ">
+                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                   <p className="text-gray-700 font-semibold">
                     <span className=" font-semibold text-gray-900 ">
                       State:
