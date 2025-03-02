@@ -130,9 +130,9 @@ function Register() {
           }) => (
             <form
               onSubmit={handleSubmit}
-              className=" w-[90%] overflow-y-scroll md:w-3/4 m-auto h-3/4 flex flex-col items-center gap-1 py-10 gradientBackground px-5 rounded-md"
+              className=" w-[96%] lg:w-[90%] overflow-y-scroll m-auto h-[90%] lg:h-3/4 flex flex-col items-center gap-1 py-10 gradientBackground px-5 rounded-md"
             >
-              <h2 className=" text-3xl font-medium my-2 ">Registeration</h2>
+              <h2 className=" text-3xl font-medium my-2 ">Registration</h2>
               <CustomInput
                 title="Full Name"
                 icon="person"
@@ -342,7 +342,7 @@ function Register() {
                 )}
               </button>
 
-              <h2 className=" text-sm font-light tracking-wide flex flex-row items-center gap-2 ">
+              <h2 className=" text-sm font-light tracking-wide flex flex-col lg:flex-row items-center gap-2 ">
                 Already have an account?{" "}
                 <span className=" text-blue-500 font-medium text-lg ">
                   <NavLink to="/"> Login Here </NavLink>

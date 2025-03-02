@@ -69,15 +69,15 @@ const Dashboard = () => {
   }
 
   return (
-    <div className=" dashboardBack px-20 pb-5 py-5 min-h-screen h-full  ">
+    <div className=" dashboardBack px-5 lg:px-20 pb-5 py-5 min-h-screen h-full  ">
       <div className=" glassmorph flex flex-col md:flex-row items-center justify-center p-4 gap-20 mb-5 bg-white rounded-lg shadow-md">
         <div className=" w-full lg:w-2/5 flex flex-col gap-4 items-center justify-center border-r-2 ">
           <img
             src={user.image}
             alt="User Profile"
-            className="h-[300px] w-[300px] bg-blend-overlay border-4 border-yellow-400 rounded-[100%] object-cover bg-gray-500 "
+            className=" h-[200px] w-[200px] lg:h-[300px] lg:w-[300px] bg-blend-overlay border-4 border-yellow-400 rounded-[100%] object-cover bg-gray-500 "
           />
-          <h1 className="text-3xl font-bold ">{user.fullName}</h1>
+          <h1 className="text-3xl font-bold text-center ">{user.fullName}</h1>
           <button
             className=" px-5 py-2 bg-red-500 rounded-md text-white font-bold "
             onClick={logoutUser}
@@ -205,9 +205,24 @@ const Dashboard = () => {
           <div className="mt-2 p-3 bg-red-100 text-red-600 rounded-lg border-l-4 border-red-600">
             ⚠ Warning: Your payment is pending. To view the complete dashboard,
             please make payment.{" "}
-            <span onClick={proceed} className="font-bold cursor-pointer">
-              <button disabled={loading} onClick={proceed}>
-                PROCEED TO PAYMENT
+            <span className="font-bold cursor-pointer">
+              <button
+                disabled={loading}
+                onClick={proceed}
+                className={`px-4 py-2 rounded ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-blue-500 text-white"
+                }`}
+              >
+                {loading ? (
+                  <span className="flex items-center gap-2">
+                    <span className="animate-spin border-2 border-t-transparent border-white rounded-full w-4 h-4"></span>
+                    Processing...
+                  </span>
+                ) : (
+                  "PROCEED TO PAYMENT"
+                )}
               </button>
             </span>
           </div>
