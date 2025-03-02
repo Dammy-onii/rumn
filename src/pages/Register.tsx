@@ -92,7 +92,7 @@ function Register() {
       <div className=" hidden md:w-2/4 lg:w-2/4 md:flex flex-col items-center bg-pink-50  ">
         <GallerySlider />
       </div>
-      <div className=" defaultNoise w-full md:w-2/4 px-10  flex flex-col items-center justify-center ">
+      <div className=" defaultNoise w-full md:w-2/4 px-5 lg:px-10  flex flex-col items-center justify-center ">
         <Formik
           initialValues={{
             fullName: "",
@@ -130,7 +130,7 @@ function Register() {
           }) => (
             <form
               onSubmit={handleSubmit}
-              className=" w-[96%] lg:w-[90%] overflow-y-scroll m-auto h-[90%] lg:h-3/4 flex flex-col items-center gap-1 py-10 gradientBackground px-5 rounded-md"
+              className=" w-full lg:w-[90%] overflow-y-scroll m-auto h-[90%] lg:h-3/4 flex flex-col items-center gap-1 py-10 gradientBackground px-5 rounded-md"
             >
               <h2 className=" text-3xl font-medium my-2 ">Registration</h2>
               <CustomInput
