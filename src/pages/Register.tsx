@@ -18,7 +18,7 @@ function Register() {
 
   const categoryOptions = [
     { name: "External", amount: 70000 },
-    { name: "Internal", amount: 25000 },
+    { name: "Internal", amount: 35000 },
   ];
 
   let navigate = useNavigate();
@@ -27,11 +27,11 @@ function Register() {
     setUploading(true);
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "rumnuploads"); 
+    formData.append("upload_preset", "rumnuploads");
 
     try {
       const response = await fetch(
-        "https://api.cloudinary.com/v1_1/dqul1bz0e/image/upload", 
+        "https://api.cloudinary.com/v1_1/dqul1bz0e/image/upload",
         {
           method: "POST",
           body: formData,
@@ -133,6 +133,12 @@ function Register() {
               className=" w-full lg:w-[90%] overflow-y-scroll m-auto h-[90%] lg:h-3/4 flex flex-col items-center gap-1 py-10 gradientBackground px-5 rounded-md"
             >
               <h2 className=" text-3xl font-medium my-2 ">Registration</h2>
+              <h2 className=" text-sm font-light tracking-wide flex flex-col lg:flex-row items-center gap-2 ">
+                Already have an account?{" "}
+                <span className=" text-blue-500 font-medium text-lg ">
+                  <NavLink to="/"> Login Here </NavLink>
+                </span>{" "}
+              </h2>
               <CustomInput
                 title="Full Name"
                 icon="person"
@@ -281,9 +287,9 @@ function Register() {
                 setFieldValue={setFieldValue}
               />
               <CustomInput
-                title="Additional Info"
+                title="Bio"
                 icon="mail_lock"
-                placeholder="Additional Info"
+                placeholder="Tell us a bit about yourself..."
                 inputType="text"
                 name="additionalInfo"
                 onChange={handleChange}
@@ -341,13 +347,6 @@ function Register() {
                   <h2 className="text-base font-medium">Submit</h2>
                 )}
               </button>
-
-              <h2 className=" text-sm font-light tracking-wide flex flex-col lg:flex-row items-center gap-2 ">
-                Already have an account?{" "}
-                <span className=" text-blue-500 font-medium text-lg ">
-                  <NavLink to="/"> Login Here </NavLink>
-                </span>{" "}
-              </h2>
             </form>
           )}
         </Formik>

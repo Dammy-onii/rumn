@@ -103,16 +103,13 @@ function Login() {
               onSubmit={handleSubmit}
               className=" w-[90%] md:w-3/4 m-auto h-3/4 flex flex-col items-center justify-center px-5 lg:px-10 py-1 lg:py-2 rounded-xl gradientBackground "
             >
-              <h2 className=" text-2xl text-center lg:text-4xl font-medium lg:my-2 ">Model National Assembly (MNA)</h2>
+              <h2 className=" text-2xl text-center lg:text-4xl font-medium lg:my-2 ">
+                Model National Assembly (MNA)
+              </h2>
               <h2 className=" text-xl lg:text-xl font-semibold my-2 lg:my-0 ">
                 Login
               </h2>
-              <h2 className=" text-sm font-light tracking-wide flex flex-col lg:flex-row items-center gap-2 ">
-                Don't have an account yet?{" "}
-                <span className=" text-blue-500 font-medium text-lg ">
-                  <NavLink to="/register"> Register Here </NavLink>
-                </span>{" "}
-              </h2>
+
               <CustomInput
                 title="Email"
                 icon="mail"
@@ -146,6 +143,12 @@ function Login() {
                   <h2 className=" text-base font-medium ">Login</h2>
                 )}
               </button>
+              <h2 className=" text-sm font-light tracking-wide flex flex-col lg:flex-row items-center gap-2 ">
+                Don't have an account yet?{" "}
+                <span className=" text-blue-500 font-medium text-lg ">
+                  <NavLink to="/register"> Register Here </NavLink>
+                </span>{" "}
+              </h2>
             </form>
           )}
         </Formik>
