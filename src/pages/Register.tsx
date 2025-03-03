@@ -18,7 +18,7 @@ function Register() {
 
   const categoryOptions = [
     { name: "External", amount: 70000 },
-    { name: "Internal", amount: 35000 },
+    { name: "Internal", amount: 40000 },
   ];
 
   let navigate = useNavigate();
