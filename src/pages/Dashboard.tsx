@@ -9,6 +9,7 @@ const Dashboard = () => {
 
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [payLoad, setPayLoad] = useState(false);
   const [error, setError] = useState("");
 
   const userID = getUserID();
@@ -35,15 +36,17 @@ const Dashboard = () => {
   };
 
   const proceed = async () => {
-    setLoading(false);
+    setPayLoad(true);
     try {
       const response = userID && (await userPayment(userID));
       console.log(response);
-      setTimeout(() => {
-        window.open(response.paymentLink);
-      }, 6000);
+      window.open(response.paymentLink);
     } catch (error) {
       console.log(error);
+    } finally {
+      setTimeout(() => {
+        setPayLoad(false);
+      }, 3000);
     }
   };
 
@@ -206,24 +209,26 @@ const Dashboard = () => {
             ⚠ Warning: Your payment is pending. To view the complete dashboard,
             please make payment.{" "}
             <span className="font-bold cursor-pointer">
-              <button
-                disabled={loading}
-                onClick={proceed}
-                className={`px-4 py-2 rounded ${
-                  loading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-500 text-white"
-                }`}
-              >
-                {loading ? (
-                  <span className="flex items-center gap-2">
-                    <span className="animate-spin border-2 border-t-transparent border-white rounded-full w-4 h-4"></span>
-                    Processing...
-                  </span>
-                ) : (
-                  "PROCEED TO PAYMENT"
-                )}
-              </button>
+              {payLoad ? (
+                <button
+                  className={`px-4 py-2 rounded 
+                      : "bg-blue-200 text-white"
+                  `}
+                >
+                  Loading.....
+                </button>
+              ) : (
+                <button
+                  onClick={proceed}
+                  className={`px-4 py-2 rounded ${
+                    payLoad
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-blue-500 text-white"
+                  }`}
+                >
+                  PROCEED TO PAYMENT
+                </button>
+              )}
             </span>
           </div>
         )}
