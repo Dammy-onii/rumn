@@ -38,9 +38,19 @@ const Dashboard = () => {
   const proceed = async () => {
     setPayLoad(true);
     try {
-      const response = userID && (await userPayment(userID));
-      console.log(response);
-      window.open(response.paymentLink);
+      if (!userID) return;
+
+      const newWindow = window.open("", "_blank");
+
+      const response = await userPayment(userID);
+
+      if (response?.paymentLink) {
+        if (newWindow) {
+          newWindow.location.href = response.paymentLink; 
+        } else {
+          window.location.href = response.paymentLink;
+        }
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -205,7 +215,7 @@ const Dashboard = () => {
             </div>
           </div>
         ) : (
-          <div className="mt-2 p-3 bg-red-100 text-red-600 rounded-lg border-l-4 border-red-600">
+          <div className="mt-2 p-3 bg-red-100 text-red-600 rounded-lg border-l-4 border-red-600 flex flex-col">
             ⚠ Warning: Your payment is pending. To view the complete dashboard,
             please make payment.{" "}
             <span className="font-bold cursor-pointer">
@@ -230,6 +240,10 @@ const Dashboard = () => {
                 </button>
               )}
             </span>
+            <h2 className=" text-blue-300 ">
+              If you have any issue with payment please reach out to
+              oloko.ayodele@lmu.edu.ng
+            </h2>
           </div>
         )}
       </div>
