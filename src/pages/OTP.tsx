@@ -19,9 +19,10 @@ function OTP() {
     setOTP(enteredOtp); // Update state with entered OTP
 
     console.log("Entered OTP:", enteredOtp);
+    // console.log(otp)
     setLoading(true)
     try {
-      const response = saved && (await verityOTP(saved, otp));
+      const response = saved && (await verityOTP(saved, enteredOtp));
       console.log(response);
       toast.success("Successful");
       setTimeout(() => {
