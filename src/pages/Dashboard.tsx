@@ -46,7 +46,7 @@ const Dashboard = () => {
 
       if (response?.paymentLink) {
         if (newWindow) {
-          newWindow.location.href = response.paymentLink; 
+          newWindow.location.href = response.paymentLink;
         } else {
           window.location.href = response.paymentLink;
         }
@@ -218,7 +218,7 @@ const Dashboard = () => {
           <div className="mt-2 p-3 bg-red-100 text-red-600 rounded-lg border-l-4 border-red-600 flex flex-col">
             ⚠ Warning: Your payment is pending. To view the complete dashboard,
             please make payment.{" "}
-            <span className="font-bold cursor-pointer">
+            <span className="font-bold cursor-pointer my-2">
               {payLoad ? (
                 <button
                   className={`px-4 py-2 rounded 
@@ -240,9 +240,9 @@ const Dashboard = () => {
                 </button>
               )}
             </span>
-            <h2 className=" text-blue-300 ">
-              If you have any issue with payment please reach out to
-              oloko.ayodele@lmu.edu.ng
+            <h2 className=" text-blue-500 font-semibold my-2 ">
+              If you have any issue with payment please reach out to{" "}
+              <a href="mailto:" className=" underline font-bold text-blue-600 ">oloko.ayodele@lmu.edu.ng</a>
             </h2>
           </div>
         )}
