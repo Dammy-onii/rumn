@@ -229,7 +229,7 @@ const Dashboard = () => {
                 </button>
               ) : (
                 <button
-                  // onClick={proceed}
+                  onClick={proceed}
                   className={`px-4 py-2 rounded ${
                     payLoad
                       ? "bg-gray-400 cursor-not-allowed"
@@ -240,10 +240,10 @@ const Dashboard = () => {
                 </button>
               )}
             </span>
-            {/* <h2 className=" text-blue-500 font-semibold my-2 ">
+            <h2 className=" text-blue-500 font-semibold my-2 ">
               If you have any issue with payment please reach out to{" "}
               <a href="mailto:" className=" underline font-bold text-blue-600 ">oloko.ayodele@lmu.edu.ng</a>
-            </h2> */}
+            </h2>
           </div>
         )}
       </div>
